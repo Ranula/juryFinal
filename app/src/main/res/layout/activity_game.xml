@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<SeekBar-->
+        <!--android:id="@+id/threatBar"-->
+        <!--android:layout_width="299dp"-->
+        <!--android:layout_height="19dp"-->
+        <!--android:layout_marginLeft="8dp"-->
+        <!--android:layout_marginRight="16dp"-->
+        <!--android:max="3"-->
+        <!--android:progress="3"-->
+        <!--app:layout_constraintHorizontal_bias="0.884"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--tools:layout_editor_absoluteY="365dp" />-->
+
+    <Button
+        android:id="@+id/previousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="previousButton"
+        android:textColor="@android:color/black"
+        android:layout_alignBaseline="@+id/nextButton"
+        android:layout_alignBottom="@+id/nextButton"
+        android:layout_alignLeft="@+id/obsceneBar"
+        android:layout_alignStart="@+id/obsceneBar" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/obsceneBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/obsceneBar"
+        android:layout_marginBottom="13dp"
+        android:onClick="onNextClick"
+        android:text="nextButton"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textDisplay"
+        android:layout_width="300dp"
+        android:layout_height="108dp"
+        android:layout_alignEnd="@+id/obsceneBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/obsceneBar"
+        android:layout_marginTop="16dp"
+        android:text=" testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest" />
+
+    <SeekBar
+        android:id="@+id/obsceneBar"
+        android:layout_width="299dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="31dp"
+        android:max="3"
+        android:progress="3"
+
+        android:layout_marginTop="122dp"
+        android:layout_marginStart="31dp"
+        android:layout_alignTop="@+id/textDisplay"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />1
+    
+    <RelativeLayout
+        android:id="@+id/fr1_id"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/obsceneBar"
+        android:layout_above="@+id/nextButton"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fr2_id"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/obsceneBar"
+        android:layout_above="@+id/nextButton"></RelativeLayout>
+
+    <!--<RadioButton-->
+        <!--android:id="@+id/radioButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignLeft="@+id/radioButton2"-->
+        <!--android:layout_alignStart="@+id/radioButton2"-->
+        <!--android:layout_alignTop="@+id/obsceneBar"-->
+        <!--android:layout_marginTop="38dp"-->
+        <!--android:checked="false"-->
+        <!--android:duplicateParentState="true"-->
+        <!--android:text="toxic" />-->
+
+    <!--<RadioButton-->
+        <!--android:id="@+id/radioButton2"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="somewhat toxic"-->
+        <!--android:layout_marginLeft="12dp"-->
+        <!--android:layout_marginStart="12dp"-->
+        <!--android:layout_below="@+id/radioButton"-->
+        <!--android:layout_alignLeft="@+id/obsceneBar"-->
+        <!--android:layout_alignStart="@+id/obsceneBar"-->
+        <!--android:layout_marginTop="17dp" />-->
+
+    <!--<RadioButton-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="not toxic"-->
+        <!--android:layout_below="@+id/radioButton2"-->
+        <!--android:layout_alignLeft="@+id/radioButton2"-->
+        <!--android:layout_alignStart="@+id/radioButton2"-->
+        <!--android:layout_marginTop="25dp"-->
+        <!--android:layout_alignRight="@+id/radioButton2"-->
+        <!--android:layout_alignEnd="@+id/radioButton2" />-->
+
+    <RadioGroup
+        android:id="@+id/toxicity_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/gender_textview"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/toxic_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/toxic"
+            android:checked="true"
+            />
+        <RadioButton
+            android:id="@+id/somewhattoxic_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/somewhat_toxic"
+            />
+
+        <RadioButton
+            android:id="@+id/nottoxic_radio_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "@string/not_toxic"
+            />
+    </RadioGroup>
+
+
+</RelativeLayout>

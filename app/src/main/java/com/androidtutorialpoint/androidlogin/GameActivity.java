@@ -159,17 +159,17 @@ public class GameActivity extends AppCompatActivity {
 
     public void getQuestions( final String token){
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
-                (Request.Method.POST, URL_FOR_QS, null, new Response.Listener<JSONObject>() {
+                (Request.Method.GET, URL_FOR_QS, null, new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        hideDialog();
-                        finish();
+                        Log.d("dsaaaaaaaaaaaaaaaaa",response.toString());
                     }
                 }, new Response.ErrorListener() {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         // TODO Auto-generated method stub
+                        Log.d("ERROOOORRR",error.toString());
                         NetworkResponse networkResponse = error.networkResponse;
                         if (networkResponse != null && networkResponse.data != null) {
                             String jsonError = new String(networkResponse.data);
@@ -183,17 +183,14 @@ public class GameActivity extends AppCompatActivity {
                             }
                         }
 
-                        hideDialog();
+                        //hideDialog();
                     }
                 }){
 
-            /**
-             * Passing some request headers
-             */
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                //headers.put("Content-Type", "application/json");
+                headers.put("Content-Type", "application/json");
                 headers.put("Authorization","Bearer "+ token);
                 return headers;
             }
